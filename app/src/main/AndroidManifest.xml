@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pragnancy_yoga.pragnancy_yoga_files">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <application
+        android:name="com.pragnancy_yoga.pragnancy_yoga_files.Main_application"
+        android:exported="true"
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:exported="true"
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/ADMOB_Unit_ID" />
+
+        <activity android:name="com.pragnancy_yoga.pragnancy_yoga_files.Splash_actvity"
+            android:exported="true"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Dashboard"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Favourite_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Static_activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Perform_excrise_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Setting_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Excerise_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <receiver android:name="com.pragnancy_yoga.pragnancy_yoga_files.receiver.BootReceiver"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.REBOOT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+
+
+            </intent-filter>
+        </receiver>
+
+
+        <receiver
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.receiver.DailyAlarmReceiver"
+            android:exported="true" />
+
+
+        <activity
+            android:exported="true"
+            android:name="com.pragnancy_yoga.pragnancy_yoga_files.Reminder"
+            android:theme="@style/AppTheme" />
+
+
+        <provider
+            android:name="com.prolificinteractive.materialcalendarview.MaterialCalendarViewInitProvider"
+            android:authorities="com.pragnancy_yoga.pragnancy_yoga_files.materialcalendarviewinitprovider"
+            android:enabled="true"
+            android:exported="false"
+            tools:replace="android:authorities" />
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+    </application>
+
+</manifest>
